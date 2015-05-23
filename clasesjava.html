@@ -1,0 +1,52 @@
+<html>
+<head>
+<script language="javascript"  type="text/javascript"> 
+
+class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad   = edad;
+  }
+
+  presentarse() {
+    return 'Hola me llamo ' + this.nombre + ' y tengo ' + this.edad + ' años';
+  }
+   get verNombre() {
+    return this.nombre;
+  }
+  
+  set nuevoNombre(nuevo) {
+    this.nombre = nuevo;
+  }
+}
+var Sergio = new Persona('Sergio', 22);
+ Sergio.presentarse();
+
+
+class Desarrollador extends Persona {
+  constructor(nombre, edad, cargo) {
+    super(nombre, edad);
+    this.cargo = cargo;
+  }
+
+  presentarse() {
+    return super.presentarse() + ' y soy desarrollador ' + this.cargo;
+  }
+}
+
+var Daniela = new Desarrollador('Daniela', 22, 'Frontend');
+Daniela.presentarse(); 
+
+  
+}
+
+Sergio.verNombre; // devuelve Sergio
+Sergio.nuevoNombre('Daniel'); // cambia el valor de nombre a Daniel
+Sergio.verNombre;
+
+</script>
+</head>
+<body >
+<h5>Ejemplo Clases en JavaScript</h5>
+</body>
+</html>
